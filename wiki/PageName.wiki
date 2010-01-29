@@ -1,2 +1,0 @@
-= Introduction =
-Yea, i know this is empty ,well wait and see i would be releasing an initial version which would  be limited to root hub ie two usb port of UHCI and support control and interrupt transfers,so you would be able to use USB keyboards and mouse practically any HID device that works on interrupt transfers :-) ,so stay tuned
