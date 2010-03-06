@@ -1,6 +1,6 @@
 =MINIX 3 USB STACK =
 
-  Project is aimed at building up USB stack for Minix 3.1.5 and later.
+  Project is aimed at setting up USB stack for Minix 3.1.5 and later.
 
 Version 0.01-alpha 
 
