@@ -1,2 +1,18 @@
-= Introduction =
-Yea, i know this is empty ,well wait and see i would be releasing an initial version which would  be limited to root hub ie two usb port of UHCI and support control and interrupt transfers,so you would be able to use USB keyboards and mouse practically any HID device that works on interrupt transfers :-) ,so stay tuned
+=MINIX 3 USB STACK =
+
+Version 0.01-alpha 
+
+==Features==
+  * Low/Full speed support
+  * Control Transfers  (Synchronous) 
+  * Interrupt Transfers 
+  * UHCI host controller driver 
+  * Dummy HID keyboard and mouse driver that works on boot protocol
+  * USBDI interface for usb device drivers
+  * USBDI support HID class driver ie HID requests from chap 7 HID specs 1.11 
+  * Dynamic loading/unloading drivers even HCDs (Minix Specific)  
+
+==Limitations== 
+  * No hub driver 
+  * Device limited to 2 root hub ports (more are supported within stack,limitation is due  to no hub  driver)
+  
