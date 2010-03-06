@@ -12,8 +12,10 @@ Version 0.01-alpha
   * Dummy HID keyboard and mouse driver that works on boot protocol
   * USBDI interface for usb device drivers
   * USBDI support HID class driver ie HID requests from chap 7 HID specs 1.11 
+  * Multiple host controller support
   * Dynamic loading/unloading drivers even HCDs (Minix Specific)  
   * Reliable Modular design 
+
 
 ==Limitations== 
   * No hub driver 
@@ -21,7 +23,6 @@ Version 0.01-alpha
   * Bulk transfer 
   * Isochronous transfer
   * Synchronous control transfer
-  * Single driver Single device ie only one driver can claim a device 
-    
-
+  * Single driver Single device ie only one driver can claim a device
+  * Only tested on Linux Host with qemu 0.11.1
   
