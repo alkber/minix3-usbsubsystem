@@ -1,0 +1,10 @@
+#!/bin/sh 
+echo "starting usbd"
+service up /usr/sbin/usbd
+echo "starting usbkbd"
+service up /usr/sbin/usbkbd
+echo "starting usbms"
+service up /usr/sbin/usbms
+echo "starting uhci-hcd"
+service up /usr/sbin/uhci-hcd
+echo "all done"

@@ -1,0 +1,10 @@
+#!/bin/sh 
+echo "\nstoping uhci-hcd"
+service down uhci-hcd
+echo "\nstoping usbkbd"
+service down usbkbd
+echo "\nstoping usbms"
+service down usbms
+echo "\nstoping usbd"
+service down usbd
+echo "all stopped"

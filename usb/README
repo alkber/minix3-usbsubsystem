@@ -1,0 +1,40 @@
+Minix 3 USB stack 
+-----------------
+Author  : Althaf K Backer <althafkbacker@gmail.com>
+Version : 0.01-alpha(17032010)
+
+
+Minix 3 USB  stack is the product of 4 months of 
+shear work , this was done as a part of my major project
+for my UG course known as B.Tech ( Computer Science and 
+Engineering ).
+
+This implementation pretty much limited due to the deadline
+i had,well i'm planning to continue this project though.
+
+
+Features (0.01-alpha) 
+--------  
+*Low / Full speed support 
+*Control transfers 
+*Interrupt transfers
+*USB driver interface (USBDI) 
+*Host controller driver interface (HCDI)  
+*Multiple host controller support   
+*UHCI host controller driver
+*USBDI for Human Interface Device (HID) class driver request 
+*Dummy HID Keyboard and Mouse Driver using boot protocol.
+
+Limitations 
+-----------
+*Bulk transfer 
+*Isochronous transfer  
+*No Hub driver
+*Limited to 2 ports of  UHCI root hub  
+*Synchronous Control transfer 
+*Single driver Single device 
+*No Direct Memory Access (DMA support) 
+*Performance and efficiency is not considered  
+*Power management 		
+
+Other Documentations can be found in are in ./doc 

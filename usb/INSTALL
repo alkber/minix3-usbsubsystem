@@ -1,0 +1,86 @@
+1.0 Install 
+
+* untar the file to /usr/src/drivers/, you should have /usr/src/drivers/usb
+  by now, cd to /usr/src/drivers/usb/
+
+* cat ./usb.conf >> /etc/drivers.conf (adapt it as well for 3.1.6) 
+
+* make && make install 
+
+1.1 Using 
+
+* Connect usb keyboard / mouse 
+
+* Make sure you have read/write access to /dev/bus/usb (Linux Specific)
+  else chmod it.
+
+* we well start step by step
+  # service up /usr/sbin/usbd 
+  # service up /usr/sbin/uhci-hcd
+  # service up /usr/sbin/usbkbd   (dummy keyboard driver)
+  # service up /usr/sbin/usbms    (dummy mouse driver) 
+--
+1.1.1 qemu and usb 
+ 
+*In qemu Monitor to see the list of usb devices attached 
+
+ (qemu) info usbhost
+  Device 1.1, speed 480 Mb/s
+    Hub: USB device 1d6b:0002, EHCI Host Controller
+  Device 2.1, speed 12 Mb/s
+    Hub: USB device 1d6b:0001, UHCI Host Controller
+  Device 3.1, speed 12 Mb/s
+    Hub: USB device 1d6b:0001, UHCI Host Controller
+  Device 4.1, speed 12 Mb/s
+    Hub: USB device 1d6b:0001, UHCI Host Controller
+  Device 2.2, speed 1.5 Mb/s
+    Class 00: USB device 046d:c016, Optical USB Mouse
+  Device 4.2, speed 1.5 Mb/s
+    Class 00: USB device 04d9:1503, USB Keyboard
+
+*Now to virtually attach usb keyboard 
+
+ (qemu) usb_add host:04d9:1503
+
+*To virtually detach usb keyboard 
+ 
+ (qemu) usb_del host:04d9:1503
+
+*To see list of usb devices currently connected to guest 
+
+ (qemu) info usb 
+
+--
+1.2 What will i see ?
+ 
+    	Pretty much nothing :-) ,well if you attach the usbd keyboard you 
+could see keyboard scan codes & (set 1) scan code , read ./usbkbd.c 
+If it is a usb mouse then the coordinates along with clicks events like 
+left ,right ,middle could be seen.
+	
+    	If you want to see the descriptors of the any usb device when connected 
+the in the file ./usbd.c set SHOW_ALL_DESC to 1, do make && make install. 
+once done you are better off using 'service refresh usbd',understand that 
+usbd is the core if that is refreshed other clients (HCD and driver) would
+be stateless (see ./doc/design ),if at all you refresh usbd do refresh 
+uhci-hcd , usbkdb, usbms.  
+
+--
+1.3 Known Problems
+
+	Though the stack is capable of handling multiple HID devices , 
+you may feel like attaching mouse and keyboard together , well it 
+should work ,but it will not,problem is the stack doesn't a hub driver yet
+but qemu load its hub device if we attach both, i still couldn't figure out
+how to remove the qemu hub device once its get attached , for testing and
+proper use attach single device detach it ,attach another one.
+
+You may notice deadlocks at time but minix will rectify it. This will be fixed
+soon.
+
+Understand that this is just a working prototype of the stack design given in
+./doc/design , i will try to make is stable for real use,you may notice failures.
+
+I have noticed while testing some host machines this stack doesn't work or its
+really too slow in responding to events.
+-- 
