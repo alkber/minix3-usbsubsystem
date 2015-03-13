@@ -1,6 +1,7 @@
 <h1> MINIX 3 USB STACK <h1>
 
 Project is aimed at setting up USB stack for Minix 3.1.5 and later.
+
 Version 0.01-alpha <b>(Release:17-March-2010)</b> Only tested on 3.1.5 Qemu
 
 <h3>Features</h3>
