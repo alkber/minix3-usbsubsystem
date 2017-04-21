@@ -1,10 +1,13 @@
-* MINIX 3 USB STACK *
+This project was done during my under graduate course (B.Tech) on Computer Science and Enginering at Cochin University of Science and Technology (CUSAT). I consider it a honour work on Minix, this project was a challenging, with a dealine of 3 month. A lot literature study was required, study of Linux and BSD usb stack et al. 
+Really enjoyed working on this. 
+
+<h3> MINIX 3 USB STACK </h3>
 
 * USB stack for Minix 3.1.5 and later.
 * Version 0.01-alpha <b>(Release:17-March-2010)</b> 
 * Only tested on Minux 3.1.5 running on Qemu
 
-* Supported features *
+<h3>Supported features</h3>
 
 * Low/Full speed support
 * Control Transfers (Synchronous)
@@ -27,6 +30,7 @@
 * Single driver Single device ie only one driver can claim a device
 * Only tested on Linux Host with qemu 0.11.1
 
+<h3>Screen shots</h3>
 
  ![1](http://lh3.ggpht.com/_fEmFcVTSPyk/S6Evr_1CFVI/AAAAAAAAAYw/6gCZSzmEC20/Screenshot-34.png)
  ![1](http://lh4.ggpht.com/_fEmFcVTSPyk/S6EwI1dHi9I/AAAAAAAAAY0/fgheiod-Kws/Screenshot-35.png)
